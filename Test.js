@@ -27,9 +27,7 @@
 // // // For of loop 
 // // let arr = ["asif", "jeevan", "Ovaiz"]
 
-// // for (let b of arr){
-// //     console.log(b);
-// // }
+
 
 // // for(let i = 10; i >= -20; i--){
 // //     if (i % 2 == 0){
@@ -870,8 +868,551 @@
 // console.log(`Eat ${pizza}`);
 
 
-const str = 'Coding is fun!';
+// const str = 'Coding is fun!';
 
-const res = str.split('').reverse().join('');   
+// const res = str.split('').reverse().join('');   
 
-console.log(res);
+// console.log(res);
+
+// let obj = {
+//     Asif: 25,
+//     Akash: 85,
+//     Haren: 95,
+//     Juhi: 100,
+//     Kushal: 99
+// }
+
+// for (let a in obj){
+//     console.log("Marks of " + a + " are " + obj[a]);
+// }
+// // For of loop 
+// let arr = ["asif", "jeevan", "Ovaiz"];
+
+// for (let b of arr){
+//     console.log(b);
+// }
+
+
+// const ratings = [5, 4, 5];
+// let sum = 0;
+
+// const total = ratings.forEach(item => sum += item);
+// // console.log(sum);
+
+// const number = [2, 4, 5, 1, 4, 3, 9, 10];
+// const numbers = [2, 4, 5, 1, 4, 3, 9, 10];
+// const numbers1 = [2, 4, 5, 1, 4, 3, 9, 10];
+// numbers1.sort((a, b) => {
+//     return a-b;
+// });
+// console.log(numbers1);
+// const output = number.reduce((acc, cur) => acc = acc + cur, 0);
+// const output1 = number.map((item, index, arr) => arr[index] = item * 2);
+// const output2 = numbers.filter(item => item % 2);
+// console.log(output2);
+// console.log(output1);
+// console.log(output);
+// // console.log(number);
+
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// fruits.splice(2, 1, "Kiwi", "watermelon");
+// console.log(fruits);
+
+// const array1 = [
+//     [0, 1],
+//     [2, 3],
+//     [4, 5],
+// ];
+
+// const result = array1.reduceRight((acc, cur) => acc.concat(cur)).sort((a, b) => a-b);
+// console.log(result);
+
+
+
+
+// let arr = [1, 2, 3, 2, 3, 4, 5, 5, 6, 1, 1, 4, 5, 7, 8, 8];
+
+// function count (arr, element){
+//     return arr.reduce
+// }
+// console.log(count(arr, 1));
+
+
+let arr1 = [
+    {
+        id: 123,
+        Token: 7455,
+    },
+    {
+        id: 122,
+        Token: 7457
+    },
+    {
+        id: 121,
+        Token: 7456
+    }
+]
+
+let arr2 = [
+    {
+        id: 126,
+        Token: 7457,
+        date: 123458
+    },
+    {
+        id: 125,
+        Token: 7456,
+        date: 6576567
+    },
+    {
+        id: 124,
+        Token: 7455,
+        date: 123456
+    }];
+
+arr1.forEach((item, index, arr) => {
+    const find = arr2.find(obj => item.Token === obj.Token);
+    const merge = Object.assign({}, find, item);
+    arr1.splice(index, 1, merge);
+    // console.log(arr1);
+});
+// console.log("booooooooom", arr1,  "booooooooom");
+
+// const merged = Object.assign({}, arr2[0], arr1[0]);
+// console.log(merged);
+
+
+const studentMarks = [
+    {
+        name: 'A',
+        age: 10,
+        mark: 50,
+        maxMarks: 80
+    },
+    {
+        name: 'B',
+        age: 13,
+        mark: 75,
+        maxMarks: 80
+    },
+    {
+        name: 'C',
+        age: 12,
+        mark: 40,
+        maxMarks: 80
+    },
+    {
+        name: 'D',
+        age: 11,
+        mark: 34,
+        maxMarks: 80
+    },
+    {
+        name: 'E',
+        age: 10,    
+        mark: 29,
+        maxMarks: 80
+    }
+]
+// studentMarks.sort((a, b) => { return a.mark - b.mark});
+// const studentMarksWithPercentage = studentMarks.map((item, index, arr) => {
+//     const percentage = item.mark * 100 / item.maxMarks;
+//     // const merge = { ...item, percentage}
+//     const merge = Object.assign({}, item, { percentage })
+//     console.log(merge);
+// });
+
+const studentMarksWithPercentage = studentMarks.sort((a, b) => {
+    return a.mark - b.mark
+}).map((item) => {
+    item.percentage = (item.mark * 100) / item.maxMarks;
+    return item;
+});
+// console.log(studentMarksWithPercentage);
+
+
+// var library = [
+//     { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254, available: true },
+//     { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264, available: false },
+//     { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245, available: true },
+//     { author: 'Holly Jackson', title: 'Five Survive', libraryID: 5673, available: true },
+//     { author: 'Lauren Asher', title: 'The Fine Print', libraryID: 7364, available: false },
+//     { author: 'Ana Huang', title: 'King of Wrath', libraryID: 4538, available: true },
+// ];
+
+// const available = library.sort((a, b) => { return a.title - b.title})
+// .filter((item, index, arr) => {
+//     return item.available
+// });
+// // console.log(available);
+
+// const unavailable = library.filter((item, index, arr) => {
+//     return !item.available
+// }).map((item) => {
+//     return {author: item.author, title: item.title}
+// })
+// // console.log(unavailable);
+
+// const people = [
+//     { name: 'Alice', age: 25 },
+//     { name: 'Bob', age: 30 },
+//     { name: 'Charlie', age: 25 }
+// ];
+// const object1 = {}
+// people.forEach((item, index, arr) => {
+//     object1[item.name] = item
+//     // const newKey = item.name;
+//     // const myObject = { oldkey: item }
+//     // myObject[newKey] = myObject.oldkey;
+//     // delete myObject.oldkey;
+//     // return myObject;
+// });
+// // console.log(object1);
+
+// const output = people.reduce((acc, cur) => {
+//     object1[cur.name] = cur;
+//     return object1;
+// });
+// // console.log(output);
+
+
+// // 5
+// let numbers = [1, 2, 3, 2, 4, 1, 5, 1];
+// let count = {};
+
+// numbers.forEach((item, index, arr) => {
+//     if(count[item]){
+//         count[item] += 1
+//     }else{
+//         count[item] = 1
+//     }
+// })
+// console.log(count);
+
+
+const peoples = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 25 },
+    { name: 'David', age: 40},
+    { name: 'Sean', age: 44 },
+    { name: 'George', age: 50 }
+];
+let sum = {};
+
+const results = peoples.reduce((acc, cur) => {
+    acc = acc + cur.age / peoples.length;
+    return acc;  
+}, 0);
+// console.log(results);
+
+
+let statusType = {
+    open: 'Open',
+    closed: 'Closed',
+    onhold: 'On Hold'
+}
+
+let tasks = [
+    {
+        name: 'Task 1',
+        status: 'open'
+    },
+    {
+        name: 'Task 2',
+        status: 'open'
+    },
+    {
+        name: 'Task 3',
+        status: 'onhold'
+    },
+    {
+        name: 'Task 4',
+        status: 'closed'
+    },
+    {
+        name: 'Task 5',
+        status: 'onhold'
+    },
+    {
+        name: 'Task 6',
+        status: 'open'
+    },
+];
+
+const result = {}
+tasks.forEach((item, index, arr) => {
+    if(Object.keys(result).includes(item.status)){
+        result[item.status].push({...item, val: item.status})
+    }else {
+        result[item.status] = [{...item, val: item.status}]
+    }
+});
+console.log(result);
+
+let personById = {
+    101: {
+        name: 'Alice',
+        age :25,
+        id :101
+    },
+    102: {
+        name: 'Bob',
+        age: 30,
+        id: 102
+    },
+    103: {
+        name: 'Kat',
+        age: 22,
+        id: 103
+    },
+    104: {
+        name: 'Aby',
+        age: 31,
+        id: 104
+    },
+    105: {
+        name: 'Bruce',
+        age: 27,
+        id: 105
+    }
+}
+
+// const output = Object.values(personById)
+// .filter((item, index, arr) => {
+//     return item.age <= 25
+// }).map((item, index, arr) => {
+//     return item.name
+// });
+// console.log(output);
+
+
+let a = 10;
+let b = 20;
+
+let c = a;
+
+a = b;
+b = c;
+// console.log(b);
+// console.log(a);
+
+
+// find for the profile_id (I used findOne in the profileSchema to find the Id, cause I don't want to overright the profileSchema)
+// check if the test key is present in the prfile_id (I used forEach to see if the key is present in the profileSchema)
+// check the test_id exists in the test key (then outside the forEach function I used findOneAndUpdate to update the testSchema, but in the profileSchema the test is same, it is not updating, help me over here)
+// update the data for the particular id in the test key
+// It should be changed in the testSchema and profileSchema also, //but prolfileSchema is just "findOne", how will you change even the profileSchema 
+
+
+// don't use findOneAndUpdate in prolfileSchema see any other way to update only the test key in the profile, If you use findOneAndUpdate it will over right all the data in the profileSchema I dont want that to happen
+
+
+// const aa = [5, 6, 7];
+// const bb = [3, 6, 10];
+
+
+// var result1 = [];
+// var aScore = 0,
+//     bScore = 0;
+
+// for (var i = 0; i < aa.length; i++) {
+//     if (aa[i] > bb[i]) aScore++;
+//     if (aa[i] < bb[i]) bScore++;
+// }
+// result1[0] = aScore;
+// result1[1] = bScore;
+// console.log(result1);
+// return result;
+
+
+
+const arr12 = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005];
+
+function aVeryBigSum(ar) {
+    return ar.reduce((acc, cur) => acc + cur);
+}
+// console.log(aVeryBigSum(arr12)); 
+
+const grdaeScale = [
+    {name: 'A+',minMarks: 91,maxMarks: 100,remarks: 'Excellent'},
+    {name: 'A',minMarks: 75,maxMarks: 90,remarks: 'Very Good'},
+    {name: 'B',minMarks: 56,maxMarks: 74,remarks: 'Good'},
+    {name: 'C',minMarks: 35,maxMarks: 55,remarks: 'Average'},
+    {name: 'D',minMarks: 0,maxMarks: 34,remarks: 'Needs Improvement'}
+];
+
+
+const studentMark = [
+    {name: 'Alice',mark: 50,maxMarks: 80},
+    {name: 'Bob',mark: 45,maxMarks: 80},
+    {name: 'Kat',mark: 66,maxMarks: 80},
+    {name: 'Aby',mark: 75,maxMarks: 80},
+    {name: 'Bruce',mark: 30,maxMarks: 80}
+];
+
+// const calculatePercentage = studentMark.map((item, index) => {
+//     const percentage  = item.mark * 100 / item.maxMarks;
+//     // console.log(percentage);
+//     const grade = '';
+//     const remarks = '';
+
+//     for(let x of grdaeScale){
+//         if(percentage >= x)
+//     }
+// });
+// console.log(calculatePercentage);
+
+const numbers_dict_q2_1 = {
+    a: [1,2,3],
+    b: [3,5,4],
+    c: [1,8,7]
+}
+
+for(let x in numbers_dict_q2_1){
+    const arr = numbers_dict_q2_1[x]
+    for(let y of arr){
+        // console.log(x,":", y);
+    }
+}
+
+numbers_dict_q2_1['a']
+// console.log(numbers_dict_q2_1.a);
+numbers_dict_q2_1.a
+
+
+const student = {
+    a: [
+        {
+        name: 'A',
+        value: 1
+      },
+      {
+        name: 'B',
+        value: 3
+      },
+      {
+        name: 'C',
+        value: 5
+      },
+
+    ] ,
+    b: [
+      {
+        name: 'D',
+        value: 2
+      },
+      {
+        name: 'E',
+        value: 5
+      },
+      {
+        name: 'F',
+        value: 7
+      },
+
+    ] ,
+    c: [
+      {
+        name: 'G',
+        value: 4
+      },
+      {
+        name: 'H',
+        value: 8
+      },
+      {
+        name: 'I',
+        value: 9
+      },
+
+    ] 
+  }
+
+  for(let x in student){
+    const arr = student[x];
+    for(let y of arr){
+        // console.log("name:", y.name,"value:", y.value);
+    }
+  }
+
+
+
+  const numbers_q2_2 =  {
+    a: [1,2,3,4],
+    b: [5,3,[8,5]],
+    c: [2,5,[8], [9, [10]]]
+};
+
+// for(let x in numbers_q2_2){
+//     const arr = numbers_q2_2[x];
+//     if(Array.isArray(arr)){
+
+//     }
+// };
+
+
+const question = [
+    {
+        class: 1,
+        name: "abc"
+    },{
+        class: 2,
+        name: "def"
+    },{
+        class: 1,
+        name: "zxc"
+    },{
+        class: 2,
+        name: "zxc"
+    },{
+        class: 3,
+        name: "zxc"
+    },{
+        class: 1,
+        name: "zxc"
+    }
+];
+
+for(let x of question){
+    
+};
+const newArr = question.filter((item) => {
+    if(item.class === 1){
+        // console.log({class_1: item});
+    }else if(item.class === 2){
+        // console.log({class_2 : item});
+    }
+});
+
+const class1 = [];
+const class2 = [];
+
+question.forEach((item) => {
+    if(item.class === 1){
+        class1.push(item)
+    }else if(item.class === 2){
+        class2.push(item)
+    }
+});
+// console.log(class1);
+
+// console.log(class2);
+
+
+const ar1 = [1, 2, 3, 2, 1, 3, 2 ,4, 1, 3,1];
+const unique = []
+for(let i = 0; i < ar1.length; i++){
+    if(!unique.includes(ar1[i])){
+        unique.push(ar1[i]);
+    }
+};
+
+console.log(unique); // Output: [1, 2, 3, 4]
+
+// console.log(unique);
+
+
+
+
+
