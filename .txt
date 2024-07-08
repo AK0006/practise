@@ -1,0 +1,162 @@
+array methods
+
+1. filter method
+
+-> returns a new array, from the original array which the elements have passes the condition
+-> does not execute for empty array
+-> It does not mutate the original array
+-> filter returns not only one, but all the elements which are matching the condition
+
+Array.prototype.myfilter = function(func) {
+    if(this.length === 0){
+        return undefined;
+    }
+
+    let filtered = [];
+    for(let i=0; i<this.length; i++){
+        if(func(this[i], i, this)){
+            filtered.push(this[i])
+        }
+    }
+    return filtered;
+}
+2. map method
+
+-> returns a new array, but the array will have the same length of the origina Array
+-> does not execute the method for empty array
+
+Array.prototype.myMap = function(func) {
+    if(this.length === 0){
+        return undefined;
+    }
+    let boom = [];
+    for(let i = 0; i<this.length; i++){
+        boom.push(func(this[i], i, this))
+    }
+    return boom;
+}
+
+3. reduce method
+
+-> returns a single value
+-> does not execute empty array elements
+-> method does not change the original array
+
+Array.prototype.myreduce = function(func, acc){
+    if(this.length === 0){
+        return undefined;
+    }
+
+    for(let i=0; i<this.length; i++){
+            acc = func(acc, this[i])
+    }
+    return acc;
+}
+
+4. Push method
+
+-> method adds a new item to the end of the array
+-> it changes the array and the length of the array
+-> returns a new length
+
+Array.prototype.myPush = function(...func){
+    for(let i = 0; i < func.length; i++){
+        this[this.length] = func[i];
+        this.length ++;
+    }
+    return this.length;
+}
+numbers.myPush(2,2);
+
+
+5. ForEach
+
+-> returns undeined
+-> it calls a function for each elements of an array
+
+
+6. slice 
+-> returns a new array, with the selected elements.
+-> this method selects from a given start point to a given end point
+-> This method does not change the original array.
+
+Array.prototype.mySlice = function(startIndex = 0, endIndex = this.length) {
+    const output1 = [];
+
+    for(let i = startIndex; i < endIndex; i++){
+        if(i < endIndex){
+            output1.push(this[i])
+        }
+    }
+    return output1;
+};
+
+7. Shift
+-> removes the first element of the array
+-> method changes the original array
+-> method returns the shifted element
+
+Array.prototype.myShift = function(func) {
+    if(this.length === 0){
+        return undefined;
+    }
+
+    const shifted = this[0];
+
+    for(let i = 0; i < this.length; i++){
+        this[i] = this[i + 1]
+    }
+
+    this.length--;
+
+    return shifted
+};
+
+8. unShift
+
+-> removes the first element in the array
+-> this method changes the original array
+-> this method returns the element which was removed from the original array
+
+Array.prototype.myUnShift = function(element) {
+    for (let i = this.length; i > 0; i--) {
+        this[i] = this[i - 1];
+    }
+    this[0] = element;
+    return this.length;
+};
+
+let numbers = [2, 3, 4];
+numbers.myUnShift(1);
+console.log(numbers); // Output: [1, 2, 3, 4]
+
+9. unShift
+
+-> adds an element in the start of a array;
+-> this method overwrites the array (mutates the array)
+-> this method returns the length of the array after adding the element
+
+Array.prototype.myUnShift = function(func){
+    for(let i = this.length; i > 0; i--){
+        this[i] = this[i - 1]
+    }
+    return this.length
+};
+
+10. pop 
+
+-> returns the element which was removed from the Array
+-> returns undefined if the array is empty (does not execute for the empty array)
+-> removes the last element of an array
+-> this method mutates the original array
+
+Array.prototype.myPop = function(func) {
+    if(this.length === 0){
+        return undefined;
+    }
+    const popped = this[this.length - 1]
+    this.length -= 1;
+    return popped;
+};
+
+
