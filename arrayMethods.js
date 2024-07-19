@@ -300,6 +300,9 @@ for(let x of studentData){
 
 
 
+
+
+
 const productss = [
     {name: 'A',model: '1',year: 2017},
     {name: 'B',model: '1',year: 2017},
@@ -2642,3 +2645,136 @@ const Calculator = {
         return num.reduce((acc, cur) => cur / acc, 1)
     },
 }
+
+
+const students8 = [
+  { id: 1, name: 'Alice', age: 21, grade: 'A' },
+  { id: 2, name: 'Bob', age: 20, grade: 'B' },
+  { id: 3, name: 'Charlie', age: 22, grade: 'A' },
+  { id: 4, name: 'David', age: 19, grade: 'C' },
+  { id: 5, name: 'Emily', age: 23, grade: 'A' }
+];
+
+function filterStudentsByGrade(students, targetGrade) {
+    return students.filter((item) => item.grade === targetGrade)
+}
+// console.log(filterStudentsByGrade(students8, 'A'));
+
+
+const obj = { a: 1, b: 2, c: 3 };
+// console.log(Object.entries(obj)); // Output: [['a', 1], ['b', 2], ['c', 3]]
+
+
+const products4 = [
+    { id: 1, name: 'Laptop', category: 'Electronics' },
+    { id: 2, name: 'T-shirt', category: 'Clothing' },
+    { id: 3, name: 'Headphones', category: 'Electronics' },
+    { id: 4, name: 'Sneakers', category: 'Footwear' },
+    { id: 5, name: 'Mouse', category: 'Electronics' }
+];
+
+function filterProductsByCategory(products, category) {
+    return products.filter(item => item.category === category)
+}
+// console.log(filterProductsByCategory(products4, 'Electronics'));
+
+const obj1 = {
+    arr_1:[1,2,3,4,5,6,7,8,9],
+    arr_2:[10,12,32,49,5,62,17,18,29],
+    arr_3:[11,12,32,43,75,64,7,38,59],
+};
+
+const combineArray = Object.values(obj1).flat(1);
+const averageArray = combineArray.reduce((acc, cur) => acc + cur, 0) / combineArray.length;
+// console.log(Math.round(averageArray));
+
+for(let key in obj1){
+    const sum = obj1[key].reduce((acc, cur) => acc + cur, 0) / obj1[key].length;
+    // console.log(sum);
+}
+
+const array2 = []
+
+for(let key in obj1){
+    const sum = obj1[key];
+    for(let x of sum){
+        array2.push(x)
+    }
+}
+// console.log(array2);
+const result6 = array2.reduce((acc, cur) => acc + cur, 0) / array2.length;
+// console.log(result6);
+
+
+// const timeStamp = 1720783331050;
+
+const date = new Date(1721048796332);
+
+// Get various components of the date
+
+const year = date.getFullYear();
+const month = date.getMonth() + 1;
+const day = date.getDay();
+const hours = date.getHours();
+const minutes = date.getMinutes();
+const seconds = date.getSeconds();
+
+console.log(`0${day}/0${month}/${year} ${hours}:${minutes}:${seconds}`);
+
+
+
+
+
+
+
+
+
+
+
+
+// DATE and TIME
+
+// 1 new Date()
+
+// const date = new Date();
+// console.log(date);
+
+// 2. constructor
+const d = new Date();
+const text = d.constructor();
+// console.log(text);
+// This gives me the whole formate like day month date year hour minute seconds and timezone(+GMT)
+
+
+// 3. getDate 
+const da = new Date();
+const ad = da.getDate();
+// console.log(ad);
+// This gives only the date of the particular day
+// Ex: 2024/02/24 it give 24
+
+// 4.getDay
+// const day = new Date();
+// const day1 = day.getDay();
+// console.log(day1);
+// This gives the day check ex to understand better
+// Ex: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+// So the date is 2024/07/12 and the day is Friday, and the output will be 5(it will return the index value of the day)
+
+
+// 5. getFullYear()
+// const year = new Date();
+// const year1 = year.getFullYear();
+// console.log(year1);
+// This gives the particular year
+
+// 6. getHours()
+// const hours = new Date();
+// const hours1 = hours.getHours();
+// console.log(hours1);
+// This gives particular hour
+
+// 7. setDate()
+const sd = new Date();
+const sd1 = sd.setDate(15)
+console.log(sd1);
